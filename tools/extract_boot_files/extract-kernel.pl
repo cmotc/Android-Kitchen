@@ -20,7 +20,7 @@ $/ = $slurpvar;
 my($bootMagic, $kernelSize, $kernelLoadAddr, $ram1Size, $ram1LoadAddr, $ram2Size, $ram2LoadAddr, $tagsAddr, $pageSize, $unused1, $unused2, $bootName, $cmdLine, $id) =
 	unpack('a8 L L L L L L L L L L a16 a512 a8', $bootimg);
 
-$pageSize = 2048;
+$pageSize = 4096;
 my($kernel) = substr($bootimg, $pageSize, $kernelSize);
 
 open (KERNELFILE, ">zImage");

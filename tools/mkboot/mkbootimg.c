@@ -73,7 +73,7 @@ int usage(void)
 
 
 
-static unsigned char padding[2048] = { 0, };
+static unsigned char padding[4096] = { 0, };
 
 int write_padding(int fd, unsigned pagesize, unsigned itemsize)
 {
@@ -106,7 +106,7 @@ int main(int argc, char **argv)
     char *cmdline = "";
     char *bootimg = 0;
     char *board = "";
-    unsigned pagesize = 2048;
+    unsigned pagesize = 4096;
     int fd;
     SHA_CTX ctx;
     uint8_t* sha;
